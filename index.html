@@ -10,7 +10,7 @@ var salesforceURL ='https://test.salesforce.com/services/oauth2/token?grant_type
 
 function syncAndPostEvent(e){
     alert("Data is synced");
-    const headers = new Headers({
+    const headers1 = new Headers({
         'Content-Type': 'application/json' , 
         'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
         'X-Content-Type-Options':'nosniff', 
@@ -22,6 +22,7 @@ function syncAndPostEvent(e){
         $.ajax({
             type: 'POST',
             url: salesforceURL,
+            headers: headers1,
             crossDomain: true,
             dataType: 'json',
             success: function(responseData, textStatus, jqXHR) {
