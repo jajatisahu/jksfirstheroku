@@ -19,7 +19,21 @@ function syncAndPostEvent(e){
         'Set-Cookie': 'HttpOnly;Secure;SameSite=Strict'
         });
 
-    return fetch(salesforceURL,{
+        $.ajax({
+            type: 'POST',
+            url: salesforceURL,
+            crossDomain: true,
+            dataType: 'json',
+            success: function(responseData, textStatus, jqXHR) {
+                alert('POST Success.');
+                //var value = responseData.someKey;
+            },
+            error: function (responseData, textStatus, errorThrown) {
+                alert('POST failed.');
+            }
+        });
+        
+    /*return fetch(salesforceURL,{
             method: 'POST',
             headers: headers,                     
             mode: 'no-cors',
@@ -33,7 +47,7 @@ function syncAndPostEvent(e){
             //alert(response.json());
 
             //return response.json();
-        }).catch( error =>  console.log(error));
+        }).catch( error =>  console.log(error));*/
 
      /*
     https://login.salesforce.com/services/oauth2/authorize?response_type=token&
