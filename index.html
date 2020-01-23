@@ -2,9 +2,37 @@
 <head>
 <script>
 alert("Done");
+var salesforceURL ='https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG92DxHaawSd0mwwIyJF1tCurTerXFLmumDpPPUo_UYc67UhEhif5NkYW.gOWPPa8UYV8vttbxgVoa1efVc&client_secret=D9AD302041B29A31AFB4C7493810D351C6CD769D2CFC1E31833AE66E98576CE7&username=dev@persistence.com.ucadevtemp&password=Optum!123';
+function syncAndPostEvent(e){
+            alert("Data is synced");
+            e.preventDefault();
+            const headers = new Headers({'Content-Type': 'application/json' , 'X-Content-Type-Options':'nosniff', 'Access-Control-Allow-Credentials':true,'Access-Control-Allow-Origin':'*'});
+            
+            return fetch(salesforceURL,{
+                        method: 'POST',
+                        headers: headers,                     
+                        mode: 'no-cors',
+                        credentials: "include"                 
+            }).then(response => {
+    if (!response.ok) {
+                        console.log(':(' + response);
+      //throw Error(response);
+    }
+            //alert(response.json());
+            
+    //return response.json();
+  }).catch( error =>  console.log(error) );
+   
+             /*
+            https://login.salesforce.com/services/oauth2/authorize?response_type=token&
+client_id=3MVG9lKcPoNINVBIPJjdw1J9LLJbP_pqwoJYyuisjQhr_LLurNDv7AgQvDTZwCoZuDZrXcPCmBv4o.8ds.5iE&
+redirect_uri=https://www.customercontactinfo.com/user_callback.jspk&
+state=mystate  */
+            
+}
 </script>
 </head>
-<body>
+<body onload="syncAndPostEvent();">
 <b>Hello Jajati</b>
 </body>
 </HTML>
