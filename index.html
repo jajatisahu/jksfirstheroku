@@ -5,7 +5,6 @@ alert("Done");
 var salesforceURL ='https://test.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG92DxHaawSd0mwwIyJF1tCurTerXFLmumDpPPUo_UYc67UhEhif5NkYW.gOWPPa8UYV8vttbxgVoa1efVc&client_secret=D9AD302041B29A31AFB4C7493810D351C6CD769D2CFC1E31833AE66E98576CE7&username=dev@persistence.com.ucadevtemp&password=Optum!123';
 function syncAndPostEvent(e){
             alert("Data is synced");
-            e.preventDefault();
             const headers = new Headers({'Content-Type': 'application/json' , 'X-Content-Type-Options':'nosniff', 'Access-Control-Allow-Credentials':true,'Access-Control-Allow-Origin':'*'});
             
             return fetch(salesforceURL,{
