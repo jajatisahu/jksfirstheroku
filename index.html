@@ -9,7 +9,9 @@ function syncAndPostEvent(e){
         'Content-Type': 'application/json' , 
         'X-Content-Type-Options':'nosniff', 
         'Access-Control-Allow-Credentials':true,
-        'Access-Control-Allow-Origin':'*'});
+        'Access-Control-Allow-Origin':'*',
+        'Set-Cookie': 'HttpOnly;Secure;SameSite=Strict'
+        });
 
     return fetch(salesforceURL,{
             method: 'POST',
