@@ -27,11 +27,11 @@ function syncAndPostEvent(e){
                 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
                 'X-Content-Type-Options':'nosniff', 
                 'Access-Control-Allow-Credentials':true,
-                'Access-Control-Allow-Origin':'https://jksfirstheroku.herokuapp.com',
+                'Access-Control-Allow-Origin':'*',
                 'Access-Control-Allow-Headers': 'Content-Type'
             },
             crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function(responseData, textStatus, jqXHR) {
                 alert('POST Success.');
                 //var value = responseData.someKey;
