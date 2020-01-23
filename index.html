@@ -31,7 +31,7 @@ function syncAndPostEvent(e){
                 'Access-Control-Allow-Headers': 'Content-Type'
             },
             crossDomain: true,
-            dataType: 'json',
+            dataType: 'jsonp',
             success: function(responseData, textStatus, jqXHR) {
                 alert('POST Success.');
                 //var value = responseData.someKey;
