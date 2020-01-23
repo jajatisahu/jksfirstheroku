@@ -24,7 +24,7 @@ function syncAndPostEvent(e){
             url: salesforceURL,
             headers: {
                 'Content-Type': 'application/json' , 
-                'Access-Control-Allow-Methods': 'POST',
+                'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
                 'X-Content-Type-Options':'nosniff', 
                 'Access-Control-Allow-Credentials':true,
                 'Access-Control-Allow-Origin':'https://jksfirstheroku.herokuapp.com',
